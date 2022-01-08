@@ -1,0 +1,6 @@
+#you find the docker-compose file under "/maschine_with_docker/maschine-projet-frontend"
+docker-compose down --remove-orphans => to stop docker compose
+docker-compose up --build => to start docker compose
+ 
+
+

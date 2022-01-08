@@ -1,0 +1,19 @@
+.machine-container {
+    display: flex;
+    width: 950px;
+    height: 350px;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.machine-section{
+    width: 100%;
+}
+
+.machine-bar-title-actif{
+    color: #3498db;
+    padding: 16px 24px;
+    max-width: 256px;
+    font-weight: bold;
+}

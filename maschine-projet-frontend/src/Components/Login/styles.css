@@ -1,0 +1,47 @@
+.Login-wrapper {
+    width: 500px;
+    height: 300px;
+    border: 1px solid black;
+    margin-top: 100px;
+    margin-left: 400px;
+    background: #3498db;
+    color: white;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.wrapper {
+  display:flex;
+  margin:32px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.button {
+    background-color:white;
+    color: #3498db;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-weight: bold;
+}
+

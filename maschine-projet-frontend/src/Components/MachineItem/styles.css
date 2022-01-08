@@ -1,0 +1,9 @@
+.card-container{
+    width: 300px;
+    overflow: hidden;
+    margin: 1rem;
+    margin-top: 0.5rem;
+    font-size: medium;
+    border: 1px solid black;
+    border-radius: 5px;
+}

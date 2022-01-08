@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Socket.io </title>
+  </head>
+  <body>
+    <p> welcome to the App.</p>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+        var socket = io();
+
+        socket.on('connect', function () {
+          console.log('connect to server')
+          socket.emit('createMessage', { 
+            modelDisplayName: "laptop",
+            modelName: "maschine_3",
+            classification: "azerr",
+            classProbability: 1,
+            classIndex: 1,
+            state: 3,
+            icon: "https://fonts.gstatic.com/s/i/materialicons/account_circle/v12/24px.svg"
+         })
+        })
+
+        socket.on('disconnect', function () {
+          console.log('disconnect from server')
+        })
+
+        socket.on('newMessage', function(message) {
+            console.log("nesMessage", message)
+        })
+    </script>
+  </body>
+</html>

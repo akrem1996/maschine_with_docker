@@ -1,0 +1,13 @@
+node_modules/*
+
+  /*<div className="App">
+        <NavBar title="Hello User"/>
+        <div className='wrapper'>
+          <Menu/>
+          <Router>
+            <Route exact path="/" component={() => <Home title="Home"/> }/>
+            <Route path="/Showmachines" component={() => <MachineList machineList={this.props.maschineList} />  } />
+            <Route path="/Charts" component={() => <Charts machineList={this.props.maschineList} /> }/>      
+          </Router>
+        </div>
+      </div>*/

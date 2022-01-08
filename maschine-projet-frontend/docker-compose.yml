@@ -1,0 +1,49 @@
+version: "3.5"
+networks:
+  node-sql:
+    driver: bridge
+  node-react:  
+    driver: bridge
+services:
+  service_react_nginx:
+    build: .
+    container_name: maschine_front_container
+    restart: always
+    links:
+      - node
+    depends_on:
+      - node
+    ports:
+      - 80:80
+    networks:
+      - node-react           
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - ../maschine-Projekt/mysqlconfig/initDataBase:/docker-entrypoint-initdb.d
+      - ../maschine-Projekt/mysqlconfig/config:/etc/mysql/conf.d
+    restart: always
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: Akrem081920  
+      MYSQL_USER: Akrem
+      MYSQL_DATABASE: maschinen
+      MYSQL_TCP_PORT: 3306
+    ports:
+      - 3306:3306   
+    networks:
+      - node-sql     
+  node:
+    build: ../maschine-Projekt
+    command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; npm start'
+    container_name: node
+    restart: always
+    depends_on:
+      - db
+    ports:
+      - 8000:8000     
+    networks:
+      - node-sql  
+      - node-react
